@@ -219,7 +219,7 @@ export default function About() {
           </div>
 
           {/* Right: ID Badge */}
-          <div className="col-lg-6 col-md-12">
+          <div className="col-lg-6 col-md-12 mt-5 mt-lg-0 d-flex justify-content-center">
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}

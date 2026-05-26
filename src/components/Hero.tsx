@@ -34,7 +34,7 @@ export default function Hero() {
   const titleLetters = "FATHUR RIZKY".split("");
 
   return (
-    <div className="page-header header-filter" ref={sectionRef} id="home">
+    <div className="page-header header-filter relative" ref={sectionRef} id="home" style={{ minHeight: "100vh", height: "auto", maxHeight: "none", overflow: "visible", paddingBottom: "100px" }}>
       <motion.div style={{ y: bgY, position: "absolute", inset: 0, zIndex: 0 }}>
         <div className="squares square1" />
         <div className="squares square2" />
@@ -73,8 +73,8 @@ export default function Hero() {
       ))}
 
       <motion.div className="container" style={{ zIndex: 10, opacity }}>
-        <div className="row align-items-center" style={{ minHeight: '100vh', paddingTop: '100px', paddingBottom: '100px' }}>
-          <div className="col-lg-6 col-md-12">
+        <div className="row align-items-center justify-content-center" style={{ minHeight: '100vh', paddingTop: '150px', paddingBottom: '100px' }}>
+          <div className="col-lg-6 col-md-12 mb-5 mb-lg-0">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}

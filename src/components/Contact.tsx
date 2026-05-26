@@ -7,7 +7,7 @@ export default function Contact() {
   const [isHoveredBtn, setIsHoveredBtn] = useState(false);
 
   return (
-    <section id="contact-form" style={{ padding: "120px 0", position: "relative", overflow: "hidden" }}>
+    <section id="contact-form" style={{ padding: "80px 0", position: "relative", overflow: "hidden" }}>
       {/* Background Orbs to match the site theme */}
       <motion.div
         animate={{ x: [-20, 20, -20], y: [-20, 20, -20] }}
@@ -30,12 +30,11 @@ export default function Contact() {
 
       <div className="container">
         <div
-          className="row align-items-center"
+          className="row align-items-center p-6 md:p-[60px_40px]"
           style={{
             background: "rgba(255, 255, 255, 0.02)",
             backdropFilter: "blur(15px)",
             borderRadius: "30px",
-            padding: "60px 40px",
             border: "1px solid rgba(255,255,255,0.05)",
             boxShadow: "0 20px 50px rgba(0,0,0,0.3)",
           }}

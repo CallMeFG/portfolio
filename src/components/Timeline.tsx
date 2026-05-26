@@ -124,26 +124,7 @@ export default function Timeline() {
                     }}
                   />
 
-                  {/* Icon badge */}
-                  <motion.div
-                    style={{
-                      position: "absolute",
-                      top: "15px",
-                      right: index % 2 === 0 ? "20px" : "auto",
-                      left: index % 2 !== 0 ? "20px" : "auto",
-                      width: "40px",
-                      height: "40px",
-                      borderRadius: "50%",
-                      background: `${exp.color}20`,
-                      border: `1px solid ${exp.color}40`,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                    whileHover={{ scale: 1.2, rotate: 15 }}
-                  >
-                    <i className={exp.icon} style={{ color: exp.color, fontSize: "16px" }} />
-                  </motion.div>
+                  {/* We moved the icon to the text container below to prevent overlapping with the image */}
 
                   <motion.div
                     style={{ flex: "1 1 300px", borderRadius: "15px", overflow: "hidden", position: "relative", height: "250px" }}
@@ -153,7 +134,25 @@ export default function Timeline() {
                     <Image src={exp.img} alt={exp.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "cover" }} />
                   </motion.div>
                   <div style={{ flex: "2 1 400px" }}>
-                    <h4 className="text-white font-weight-bold mb-3">{exp.title}</h4>
+                    <div style={{ display: "flex", alignItems: "center", gap: "15px", marginBottom: "15px" }}>
+                      <motion.div
+                        style={{
+                          width: "40px",
+                          height: "40px",
+                          borderRadius: "50%",
+                          background: `${exp.color}20`,
+                          border: `1px solid ${exp.color}40`,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0
+                        }}
+                        whileHover={{ scale: 1.2, rotate: 15 }}
+                      >
+                        <i className={exp.icon} style={{ color: exp.color, fontSize: "16px" }} />
+                      </motion.div>
+                      <h4 className="text-white font-weight-bold mb-0" style={{ fontSize: "1.1rem", lineHeight: "1.4" }}>{exp.title}</h4>
+                    </div>
                     <p style={{ color: "rgba(255,255,255,0.7)", lineHeight: "1.8" }}>{exp.desc}</p>
                     {exp.link && (
                       <motion.a

@@ -35,7 +35,7 @@ export default function SkillCard({ title, paragraphs, id, index }: { title: str
   return (
     <>
       <motion.div 
-        className="col-lg-3 col-md-6 mb-5"
+        className="col-6 col-md-4 col-lg-3 mb-4"
         initial={{ opacity: 0, y: 60, rotateX: -15 }}
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
         viewport={{ once: true, margin: "-50px" }}
@@ -118,7 +118,7 @@ export default function SkillCard({ title, paragraphs, id, index }: { title: str
                 e.stopPropagation();
                 setModalOpen(true);
               }}
-              style={{ width: '100%', fontWeight: 600, letterSpacing: '1px' }}
+              style={{ width: '100%', fontWeight: 600, letterSpacing: '0.5px', whiteSpace: 'nowrap', padding: '10px 5px', fontSize: '0.85rem' }}
             >
               Read Case Study
             </motion.button>

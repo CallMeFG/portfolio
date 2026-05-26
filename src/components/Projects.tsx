@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const projects = [
@@ -26,51 +26,61 @@ const projects = [
 ];
 
 export default function Projects() {
-  const targetRef = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-65%"]);
-
   return (
-    <section ref={targetRef} id="projects" style={{ position: "relative", height: "300vh", background: "transparent" }}>
-      {/* Sticky Container */}
-      <div style={{ position: "sticky", top: 0, height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", overflow: "hidden", paddingTop: "5vh" }}>
-        
-        <div className="container mb-5" style={{ zIndex: 10 }}>
+    <section id="projects" style={{ padding: "100px 0", position: "relative", background: "transparent" }}>
+      <div className="container">
+        <div className="mb-5" style={{ zIndex: 10 }}>
             <h2 className="title text-white font-weight-bold text-center" style={{ fontSize: "3rem" }}>
               MY <span className="text-warning">PROJECTS</span>
             </h2>
-            <p className="text-center text-muted">Scroll down to explore some of my personal and client projects.</p>
+            <p className="text-center text-muted mb-5">Scroll down to explore some of my personal and client projects.</p>
         </div>
 
-        <motion.div style={{ x, display: "flex", gap: "50px", paddingLeft: "10%", paddingRight: "50%", alignItems: "center", height: "60vh" }}>
+        <div 
+          className="flex overflow-x-auto pb-10 px-[5vw] lg:px-0 project-carousel" 
+          style={{ 
+            gap: "30px",
+            scrollSnapType: "x mandatory",
+            WebkitOverflowScrolling: "touch"
+          }}
+        >
+          {/* Elegant Custom Scrollbar */}
+          <style dangerouslySetInnerHTML={{__html: `
+            .project-carousel::-webkit-scrollbar {
+              height: 8px;
+            }
+            .project-carousel::-webkit-scrollbar-track {
+              background: rgba(255, 255, 255, 0.05);
+              border-radius: 10px;
+              margin: 0 5vw;
+            }
+            .project-carousel::-webkit-scrollbar-thumb {
+              background: linear-gradient(90deg, #e14eca, #00f2fe);
+              border-radius: 10px;
+            }
+            .project-carousel::-webkit-scrollbar-thumb:hover {
+              background: linear-gradient(90deg, #ba54f5, #00f2c3);
+            }
+          `}} />
+
           {projects.map((project, idx) => (
-            <div
+            <motion.div
               key={idx}
-              style={{
-                width: "800px",
-                height: "500px",
-                background: "rgba(30, 30, 40, 0.6)",
-                backdropFilter: "blur(20px)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                borderRadius: "30px",
-                display: "flex",
-                overflow: "hidden",
-                position: "relative",
-                flexShrink: 0,
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
-              }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="flex flex-col lg:flex-row relative shrink-0 overflow-hidden rounded-[30px] border border-white/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] bg-[#1e1e2899] backdrop-blur-[20px] w-[85vw] lg:w-[900px]"
+              style={{ scrollSnapAlign: "center" }}
             >
               {/* Image Side */}
-              <div style={{ flex: 1, position: "relative", background: "rgba(255,255,255,0.02)", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px" }}>
+              <div className="relative flex items-center justify-center p-5 bg-white/5 w-full lg:w-1/2 h-[250px] lg:h-auto min-h-[300px]">
                 <div style={{ position: "relative", width: "100%", height: "100%" }}>
                   <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "contain" }} />
                 </div>
               </div>
               {/* Text Side */}
-              <div style={{ flex: 1, padding: "40px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <div className="flex flex-col justify-center p-8 lg:p-12 w-full lg:w-1/2">
                 <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
                   {project.icons.map((icon, i) => (
                     <div key={i} style={{ width: "30px", height: "30px", position: "relative" }}>
@@ -86,9 +96,9 @@ export default function Projects() {
                   <button className="btn btn-warning btn-round btn-sm interactive">Case Study</button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
