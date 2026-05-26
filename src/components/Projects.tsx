@@ -66,7 +66,7 @@ export default function Projects() {
               {/* Image Side */}
               <div style={{ flex: 1, position: "relative", background: "rgba(255,255,255,0.02)", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px" }}>
                 <div style={{ position: "relative", width: "100%", height: "100%" }}>
-                  <Image src={project.img} alt={project.title} fill style={{ objectFit: "contain" }} />
+                  <Image src={project.img} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "contain" }} />
                 </div>
               </div>
               {/* Text Side */}
@@ -74,7 +74,7 @@ export default function Projects() {
                 <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
                   {project.icons.map((icon, i) => (
                     <div key={i} style={{ width: "30px", height: "30px", position: "relative" }}>
-                      <Image src={icon} alt="tech" fill style={{ objectFit: "contain" }} />
+                      <Image src={icon} alt="tech" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: "contain" }} />
                     </div>
                   ))}
                 </div>

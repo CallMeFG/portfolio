@@ -16,8 +16,8 @@ export default function Hero() {
     "> SYSTEM BOOT...",
     "> LOADING DEVELOPER PROFILE...",
     "> NAME: FATHUR RIZKY ASSANI",
-    "> ROLE: JUNIOR WEB DEVELOPER",
-    "> SKILLS: JAVA, PYTHON, PHP, MYSQL",
+    "> ROLE: FULLSTACK DEVELOPER",
+    "> SKILLS: PHP, PYTHON, JAVA, MYSQL, etc...",
     "> STATUS: READY TO BUILD AWESOME THINGS",
     "> _"
   ];
@@ -121,14 +121,14 @@ export default function Hero() {
                   animate={{ color: ["#ffffff", "#e14eca", "#00f2fe", "#ffffff"] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  IT Professional
+                  Software Engineering
                 </motion.span>
                 {" | "}
                 <motion.span
                   animate={{ color: ["#ffffff", "#00f2c3", "#ba54f5", "#ffffff"] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 >
-                  Software Engineer
+                  Fullstack Developer
                 </motion.span>
               </motion.h3>
 
@@ -139,7 +139,7 @@ export default function Hero() {
                 className="text-light mt-4"
                 style={{ fontSize: '1.1rem', maxWidth: '450px', lineHeight: 1.6 }}
               >
-                Transforming complex problems into elegant, interactive digital experiences. Focused on frontend aesthetics and backend reliability.
+              Building reliable web applications with Laravel, modern technologies, and an engineering-driven mindset.
               </motion.p>
 
               <motion.div

@@ -213,15 +213,15 @@ export default function IDBadge() {
               </div>
               <div>
                 <div style={{ color: "#fff", fontWeight: 700, fontSize: "0.95rem" }}>Fathur Rizky Assani</div>
-                <div style={{ color: "#00f2c3", fontSize: "0.7rem", fontWeight: 600 }}>Junior Web Developer</div>
+                <div style={{ color: "#00f2c3", fontSize: "0.7rem", fontWeight: 600 }}>Fullstack Developer</div>
               </div>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
               {[
-                { label: "DIVISION", value: "Frontend", icon: "fas fa-code" },
+                { label: "DIVISION", value: "Fullstack", icon: "fas fa-code" },
                 { label: "CLEARANCE", value: "Level 3", icon: "fas fa-key" },
-                { label: "SPECIALTY", value: "UI/UX", icon: "fas fa-palette" },
+                { label: "SPECIALTY", value: "Laravel", icon: "fas fa-palette" },
                 { label: "STATUS", value: "Active", icon: "fas fa-circle", iconColor: "#00f2c3" },
               ].map((stat) => (
                 <div

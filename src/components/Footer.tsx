@@ -33,7 +33,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              A Junior Web Developer with hands-on experience in frontend and backend. Skilled in creating responsive interfaces, managing databases, and deploying static sites.
+              A Fullstack Web Developer with hands-on experience in Laravel development, database design, and modern web technologies. Currently exploring React, AI engineering, and automation workflows.
             </motion.p>
           </div>
 
@@ -65,7 +65,7 @@ export default function Footer() {
                     scale: 1.25,
                     borderColor: link.color,
                     boxShadow: `0 0 20px ${link.color}40`,
-                    rotate: [0, -8, 8, 0],
+                    rotate: 15,
                   }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -85,7 +85,7 @@ export default function Footer() {
           transition={{ delay: 0.6 }}
         >
           <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.8rem", letterSpacing: "1px" }}>
-            © {new Date().getFullYear()} CallMeFG. Crafted with <motion.span animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1, repeat: Infinity }}>❤️</motion.span>
+            © {new Date().getFullYear()} CallMeFG. Crafted with <motion.span animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1, repeat: Infinity }}>full effort</motion.span>
           </p>
         </motion.div>
       </div>

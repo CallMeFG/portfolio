@@ -178,13 +178,15 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
               >
-                Get to know me!
+                About Me
               </motion.h3>
               <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "1rem", lineHeight: "1.8" }}>
                 {[
-                  <>I&apos;m a <strong className="text-white">Frontend Focused Web Developer</strong> building and managing the Front-end of Websites and Web Applications that lead to the success of the overall product. Check out some of my work in the <strong>Projects</strong> section.</>,
-                  <>I also like sharing content related to the stuff that I have learned over the years in <strong>Web Development</strong> so it can help other people in the Dev Community. Feel free to Connect or Follow me on my socials.</>,
-                  <>I&apos;m open to <strong className="text-white">Job opportunities</strong> where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience, then don&apos;t hesitate to<strong> contact me</strong>.</>,
+                  <>I&apos;m a <strong className="text-white">Fullstack Web Developer</strong> focused on building reliable and scalable web applications using Laravel, PHP, and database-driven systems.</>,
+                  <>I enjoy <strong className="text-white">turning ideas</strong> into functional digital products, from reservation systems and cashier applications to smart parking and entertainment platforms.</>,
+                  <>Beyond web development, I actively explore <strong className="text-white">AI technologies</strong>, automation tools, and modern developer ecosystems to continuously improve my technical skills.</>,
+                  <>I&apos;m <strong className="text-white">passionate</strong> about continuous learning, problem-solving, and building systems that provide real value to users.</>,
+                  <>I&apos;m open to collaboration, freelance opportunities, and real-world projects where I can contribute, learn, and grow as a <strong className="text-white">developer</strong>.</>,
                 ].map((content, idx) => (
                   <motion.p
                     key={idx}
