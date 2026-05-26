@@ -19,8 +19,48 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Marquee pill hover */
+.marquee-pill:hover {
+  background: rgba(225, 78, 202, 0.15) !important;
+  border-color: rgba(225, 78, 202, 0.5) !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(225, 78, 202, 0.2);
+}
+
+/* Form inputs placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(225, 78, 202, 0.4);
+  color: #fff;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #e14eca, #00f2c3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ba54f5, #00f2fe);
+}
+
